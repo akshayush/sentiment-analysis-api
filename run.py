@@ -22,7 +22,8 @@ if __name__ == '__main__':
         app = create_app(flask_app_config)
 
         # Run the APP
-        app.run(host=flask_app_config['host'], port=flask_app_config['port'], debug=flask_app_config['debug'])
+        #app.run(host=flask_app_config['host'], port=flask_app_config['port'], debug=flask_app_config['debug'])
+        app.run(host=flask_app_config['host'],debug=flask_app_config['debug'])
 
     except Exception as e:
         print(f"Unexpected Error in the Back End Server: {e}")
