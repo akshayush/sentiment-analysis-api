@@ -8,8 +8,6 @@ flask:
   debug: True
 
 
-# Audio Configuration
-# audio:
 
 # Transcription Configuration
 transcription:
