@@ -1,7 +1,14 @@
 from app import create_app
 
 from app.config import Config  # Import Config class
+import os
+import torch
+import streamlit
 
+torch.classes.__path__ = [os.path.join(torch.__path__[0], torch.classes.__file__)] 
+
+# or simply:
+torch.classes.__path__ = []
 
 if __name__ == '__main__':
     try:
@@ -15,7 +22,8 @@ if __name__ == '__main__':
         app = create_app(flask_app_config)
 
         # Run the APP
-        app.run(host=flask_app_config['host'], port=flask_app_config['port'], debug=flask_app_config['debug'])
+        #app.run(host=flask_app_config['host'], port=flask_app_config['port'], debug=flask_app_config['debug'])
+        app.run(host=flask_app_config['host'],debug=flask_app_config['debug'])
 
     except Exception as e:
         print(f"Unexpected Error in the Back End Server: {e}")
